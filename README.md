@@ -13,10 +13,10 @@ Based on the repository for an article on
 npm install
 ```
 
-3. Create a `.env` file in the project root directory. Add the name of an AWS SSH key.
+3. Create a `.env` file in the Aria-Demo-Production root directory. Add the name of an AWS SSH key.
 
 ```
-SSH_KEY_PAIR='YOUR_KEY_PAIR_Name'
+SSH_KEY_PAIR='YOUR_KEY_PAIR'
 ```
 
 4. Create the CDK stack
