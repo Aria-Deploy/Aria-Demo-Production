@@ -56,7 +56,7 @@ export class AriaDemoProductionStack extends cdk.Stack {
       }),
       minCapacity: 1,
       maxCapacity: 1,
-      keyName: 'ec2-key-pair', // replace this with your security key
+      // keyName: 'ec2-key-pair', // replace this with your security key
       securityGroup: webserverSG,
       vpcSubnets: {
         subnetType: ec2.SubnetType.PUBLIC,
