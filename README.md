@@ -46,3 +46,18 @@ npx cdk destroy
 4. You will have service discovery for node_exporter enabled by default. To enable service discovery for the dockerized web server apps provided, use the Aria-Deploy form to add a prometheus exporter on port 8081 (also choose a descriptive job name, such as 'web_server'). 
 
 5. Select the files you copied into the top of level of Aria in step 3 as your app Docker images and docker-compose files.
+
+
+## About the Dockerized Web Apps
+The production, baseline, and canary dockerized apps included in this repository are based off the example presented in [this article](https://sysdig.com/blog/golden-signals-kubernetes/).
+
+There are four routes of interest:
+- `/`
+- `/{anything}`
+- `/sayhello/{name}`
+  - These three routes return a webpage after a random delay. 
+  - There is no difference between the Production and Basline app other than page color and the page message; they exhibit the same delay behavior.
+  - The Canary app exhibits shorter delays.
+  - The `/sayhello/{name}` route displays `{name}` as part of the page.
+- `/metrics`
+  - This route is only accessible for the Baseline and Canary apps via port 8081. It is the exposed metrics path for Prometheus.
