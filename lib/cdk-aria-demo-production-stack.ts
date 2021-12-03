@@ -73,14 +73,14 @@ export class AriaDemoProductionStack extends cdk.Stack {
       this,
       'AriaDemoProductionImageAsset',
       {
-        path: './artifacts/demoBaseline.tar',
+        path: './artifacts/demoProduction.tar',
       },
     );
     productionImageAsset.grantRead(asg.grantPrincipal);
     asg.userData.addS3DownloadCommand({
       bucket: productionImageAsset.bucket,
       bucketKey: productionImageAsset.s3ObjectKey,
-      localFile: '/home/ec2-user/demoBaseline.tar',
+      localFile: '/home/ec2-user/demoProduction.tar',
     });
 
     const productionComposeAsset = new Asset(

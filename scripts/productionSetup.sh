@@ -24,5 +24,5 @@ cd /home/ec2-user
 chown -R ec2-user:ec2-user .
 
 # bring up container
-docker load -i /home/ec2-user/demoBaseline.tar
+docker load -i /home/ec2-user/demoProduction.tar
 docker-compose up

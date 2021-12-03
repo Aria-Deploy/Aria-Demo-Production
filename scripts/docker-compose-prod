@@ -1,6 +1,6 @@
 version: "3.7"
 services:
   production:
-    image: small-go-prom-app:baseline
+    image: small-go-prom-app:production
     ports:
       - 80:8080

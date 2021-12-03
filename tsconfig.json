@@ -5,8 +5,8 @@
     "lib": [
       "es2020"
     ],
-    "outDir": "./dist",
-    "rootDir": "./src", 
+    // "outDir": "./dist",
+    // "rootDir": "./src", 
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -25,7 +25,7 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "types": ["@types/jest"],
+    "types": ["@types/jest", "node"],
   },
   "exclude": [
     "node_modules",
