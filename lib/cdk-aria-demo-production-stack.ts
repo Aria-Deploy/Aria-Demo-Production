@@ -4,6 +4,9 @@ import * as elbv2 from '@aws-cdk/aws-elasticloadbalancingv2';
 import * as cdk from '@aws-cdk/core';
 import {Asset} from '@aws-cdk/aws-s3-assets';
 import {readFileSync} from 'fs';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 export class AriaDemoProductionStack extends cdk.Stack {
   constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
@@ -45,6 +48,11 @@ export class AriaDemoProductionStack extends cdk.Stack {
       'allow http access from anywhere',
     );
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    console.log('env: ', props.env);
+    console.log('ssh: ', process.env.SSH_KEY_PAIR);
+
     const instance = {
       vpc,
       instanceType: ec2.InstanceType.of(
@@ -56,7 +64,7 @@ export class AriaDemoProductionStack extends cdk.Stack {
       }),
       minCapacity: 1,
       maxCapacity: 1,
-      // keyName: 'ec2-key-pair', // replace this with your security key
+      keyName: process.env.SSH_KEY_PAIR,
       securityGroup: webserverSG,
       vpcSubnets: {
         subnetType: ec2.SubnetType.PUBLIC,

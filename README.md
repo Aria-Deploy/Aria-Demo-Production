@@ -13,20 +13,23 @@ Based on the repository for an article on
 npm install
 ```
 
-### (optional). If you wish to use your own ssh key pair with the demo production environment. 
-Go to `./lib/cdk-aria-demo-production-stack.ts`, search for `keyName`, uncomment the appropriate line in the `instance` object declaration, and enter the string for your ssh key. Then rebuild the application by entering `npm run build`.
+3. Create a `.env` file in the project root directory. Add the name of an AWS SSH key.
 
-3. Create the CDK stack
+```
+SSH_KEY_PAIR='YOUR_KEY_PAIR_Name'
+```
+
+4. Create the CDK stack
 
 ```bash
 npx cdk deploy \
   --outputs-file ./cdk-outputs.json
 ```
 
-4. Open the AWS CloudFormation Console and the stack should be created in your
+5. Open the AWS CloudFormation Console and the stack should be created in your
    default region
 
-5. Cleanup
+6. Cleanup
 
 ```bash
 npx cdk destroy
