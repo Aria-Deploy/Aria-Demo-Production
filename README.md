@@ -13,7 +13,7 @@ Based on the repository for an article on
 npm install
 ```
 
-# (optional). If you wish to use your own ssh key pair with the demo production environment. 
+### (optional). If you wish to use your own ssh key pair with the demo production environment. 
 Go to `./lib/cdk-aria-demo-production-stack.ts`, search for `keyName`, uncomment the appropriate line in the `instance` object declaration, and enter the string for your ssh key. Then rebuild the application by entering `npm run build`.
 
 3. Create the CDK stack
