@@ -48,11 +48,6 @@ export class AriaDemoProductionStack extends cdk.Stack {
       'allow http access from anywhere',
     );
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    console.log('env: ', props.env);
-    console.log('ssh: ', process.env.SSH_KEY_PAIR);
-
     const instance = {
       vpc,
       instanceType: ec2.InstanceType.of(
@@ -64,12 +59,17 @@ export class AriaDemoProductionStack extends cdk.Stack {
       }),
       minCapacity: 1,
       maxCapacity: 1,
-      keyName: process.env.SSH_KEY_PAIR,
       securityGroup: webserverSG,
       vpcSubnets: {
         subnetType: ec2.SubnetType.PUBLIC,
       },
     };
+
+    const sshKey = process.env.SSH_KEY_PAIR;
+    if (sshKey) {
+      // @ts-ignore
+      instance.keyName = sshKey;
+    }
 
     const asg = new autoscaling.AutoScalingGroup(
       this,
