@@ -19,7 +19,7 @@ Based on the repository for an article on
 > SSH_KEY_PAIR='YOUR_KEY_PAIR'
 > ```
 
-4. Create the CDK stack.
+4. Create the CDK stack by running the following command at the top level of the Aria-Demo-Production path.
 
 > ```bash
 > npx cdk deploy
