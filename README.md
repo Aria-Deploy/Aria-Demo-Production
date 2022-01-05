@@ -6,6 +6,10 @@ Based on the repository for an article on
 ## How to Use
 
 1. Clone the repository.
+> ```bash
+> git clone https://github.com/Aria-Deploy/Aria-Demo-Production.git
+> ```
+
 
 2. Install the dependencies.
 
