@@ -9,9 +9,9 @@ Based on the repository for an article on
 
 2. Install the dependencies.
 
-```bash
-npm install
-```
+> ```bash
+> npm install
+> ```
 
 3. (OPTIONAL) To use an AWS SSH key, create a `.env` file in the Aria-Demo-Production root directory, and add the name of an AWS SSH key.
 
