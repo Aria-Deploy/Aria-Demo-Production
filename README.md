@@ -28,7 +28,7 @@ Based on the repository for an article on
 5. Open the AWS CloudFormation Console and the stack should be created in your
    default region.
 
-6. Cleanup
+6. Once you're done with the demon environment, destroy it with the following commands. *Make sure to destroy any canary deployments associated with the demo environment first!*
 
 > ```bash
 > npx cdk destroy
